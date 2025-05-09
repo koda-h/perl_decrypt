@@ -1,0 +1,14 @@
+services:
+  decryptor:
+    build: .
+    # 暗号化ファイルと出力先を共有
+    volumes:
+      - ./data:/data
+    # パスフレーズは .env で管理（推奨）
+    environment:
+      - PASSPHRASE=${PASSPHRASE}
+    # decrypt_aes_gcm.pl への引数
+    command: >
+      -i /data/sample.bin
+      -o /data/sample.dec.txt
+      --passenv PASSPHRASE
