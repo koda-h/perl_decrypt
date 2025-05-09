@@ -6,6 +6,7 @@
 $ cp .env.example .env
 
 # Edit for your environment
+# PASSPHRASE に、暗号化時のパスワードを設定してください
 $ vi .env
 
 
